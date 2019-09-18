@@ -1,19 +1,9 @@
-$(document).ready(
-    function () {
-        $("div").css({
-            'background-color': 'blue'
-        });
-    });
-
 class Country {
     constructor(name, lang, greeting, colors) {
         this.name = name;
         this.lang = lang;
         this.greeting = greeting;
         this.colors = colors;
-    }
-    setColors() {
-
     }
 }
 var usa = new Country("USA", "Murican", "Why Hello there world! Have some McDonalds", ["red", "white", "blue"]);
@@ -22,7 +12,7 @@ var algeria = new Country("Algeria", "Arabic and Berber", "Sup", ["blue", "yello
 
 
 function SwitchCountry() {
-    var input = $("#CountryList option:selected").val();
+    var input = "USA";
     var country;
 
     if (input === "USA") {
@@ -35,11 +25,5 @@ function SwitchCountry() {
     else if (input === "Algeria") {
         country = algeria;
     }
-
-    $("#Color1").css("background-color", country.colors[0]);
-    $("#Color2").css("background-color", country.colors[1]);
-    $("#Color3").css("background-color", country.colors[2]);
-
-    $("#CountryName").text(country.name);
 
 }
